@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 
 class AnnouncementScreen extends StatefulWidget {
   const AnnouncementScreen({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class _AnnouncementScreenState extends State<AnnouncementScreen>
       id: '1',
       title: 'Rally at Shivaji Park Tomorrow',
       message:
-          'Join MNS President Raj Thackeray for a massive rally at Shivaji Park on Sunday, 4:00 PM. Show your support for Maharashtra\'s development and the rights of Marathi Manoos.',
+          'Join MNS  Google Form Link: - https://forms.gle/33T28BnWvyKFd5it8 a massive rally at Shivaji Park on Sunday, 4:00 PM. Show your support for Maharashtra\'s development and the rights of Marathi Manoos.',
       type: AnnouncementType.rally,
       date: DateTime.now().subtract(const Duration(hours: 3)),
       isRead: false,
@@ -206,6 +208,13 @@ class _AnnouncementScreenState extends State<AnnouncementScreen>
   }
 
   Widget _buildAnnouncementCard(Announcement announcement, ThemeData theme) {
+    Future<void> _onOpen(LinkableElement link) async {
+      final uri = Uri.parse(link.url);
+      if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+        throw Exception("Could not launch ${link.url}");
+      }
+    }
+
     return Container(
       margin: const EdgeInsets.only(bottom: 16, top: 16),
       child: Material(
@@ -279,15 +288,23 @@ class _AnnouncementScreenState extends State<AnnouncementScreen>
                   ],
                 ),
                 const SizedBox(height: 12),
-                Text(
-                  announcement.message,
+
+                // ✅ Replacing SelectableText with SelectableLinkify
+                SelectableLinkify(
+                  text: announcement.message,
+                  onOpen: _onOpen,
                   style: theme.textTheme.bodyMedium?.copyWith(
                     height: 1.5,
                     color: announcement.isRead
                         ? theme.colorScheme.onSurface.withOpacity(0.8)
                         : theme.colorScheme.onSurface,
                   ),
+                  linkStyle: const TextStyle(
+                    color: Colors.blue,
+                    decoration: TextDecoration.none,
+                  ),
                 ),
+
                 if (announcement.type == AnnouncementType.rally ||
                     announcement.type == AnnouncementType.protest ||
                     announcement.type == AnnouncementType.employment) ...[
