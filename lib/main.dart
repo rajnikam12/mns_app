@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:mns_app/constants/assets.dart';
-import 'package:mns_app/pages/home/home_page.dart';
 import 'package:mns_app/services/theme.dart';
-import 'package:mns_app/widgets/navigation_menu.dart';
-import 'package:mns_app/widgets/splash_screen.dart';
+import 'package:mns_app/navigation_menu.dart';
+import 'package:mns_app/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());

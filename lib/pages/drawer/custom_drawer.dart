@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mns_app/pages/about/about_page.dart';
 import 'package:mns_app/pages/achievements/achievements.dart';
-import 'package:mns_app/pages/drawer/components/custom_dropdown.dart';
+import 'package:mns_app/pages/drawer/widgets/custom_dropdown.dart';
 import 'package:mns_app/pages/drawer/drawer_pages.dart/journey_screen.dart';
 import 'package:mns_app/pages/yt/youtube.dart';
 

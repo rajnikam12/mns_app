@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'dart:math';
 
 // ------------------- Constants -------------------

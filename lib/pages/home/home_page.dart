@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:mns_app/constants/assets.dart';
-import 'package:mns_app/events.dart';
+import 'package:mns_app/widgets/events.dart';
 import 'package:mns_app/pages/drawer/custom_drawer.dart';
 import 'package:mns_app/pages/home/components/event_cards.dart';
 import 'package:mns_app/pages/home/components/view_all.dart';
-import 'package:mns_app/widgets/slider.dart';
+import 'package:mns_app/widgets/custom_slider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

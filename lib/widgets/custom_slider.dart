@@ -20,7 +20,7 @@ class CustomSlider extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.25),
+                color: Colors.black.withAlpha(64),
                 blurRadius: 10,
                 offset: const Offset(0, 5),
               ),

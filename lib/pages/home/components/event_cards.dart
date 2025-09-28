@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:mns_app/events.dart';
+import 'package:mns_app/widgets/events.dart';
 import 'package:mns_app/pages/home/components/event_detail_page.dart';
 import 'package:shimmer/shimmer.dart';
 

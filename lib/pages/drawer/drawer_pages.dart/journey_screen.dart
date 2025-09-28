@@ -33,7 +33,6 @@ class TimelineItem {
   });
 
   Color getColor(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
     switch (eventType) {
       case TimelineEventType.foundation:
         return AppTheme.primaryColor;
